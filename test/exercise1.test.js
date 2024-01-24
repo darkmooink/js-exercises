@@ -33,12 +33,18 @@ describe('getFillings', () => {
 
 describe('isFromManchester', () => {
 	test('returns true if the person is from Manchester', () => {
-		const person = {
+		const person1 = {
 			name: 'Mohammed',
 			city: 'Manchester',
 			age: 23,
 		};
-		expect(isFromManchester(person)).toBe(true);
+		expect(isFromManchester(person1)).toBe(true);
+        const person2 = {
+            name: 'Alice',
+            city: 'manchester',
+            age: 29,
+        };
+        expect(isFromManchester(person2)).toBe(true);
 	});
 
 	test('returns false if the person is not Manchester', () => {
