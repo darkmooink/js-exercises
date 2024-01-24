@@ -85,7 +85,7 @@ describe('getBusNumbers', () => {
 		expect(getBusNumbers(43728)).toBe(1094);
 	});
 
-	//Too Do: This test isnt returning true, probable fault with test not function code.
+	//To Do: This test isnt returning true, probable fault with test not function code.
 	test('returns an error if the number of passengers is negitive', () => {
 		expect(getBusNumbers(-8).toThrow('You cant have negitive people'))
 	})

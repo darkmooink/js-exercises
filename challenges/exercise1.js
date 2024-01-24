@@ -24,7 +24,9 @@ export function countSheep(arr) {
 
 export function hasMPostCode(person) {
 	if (person === undefined) throw new Error('person is required');
-	// Your code here!
+	// checks if 2nd char is a number and the first is "M"
+	return (/^[0-9]$/.test(person.address.postCode[1]) && 
+	person.address.postCode[0] === "M")
 }
 
 function countEachInstanceInArray(arr) {
