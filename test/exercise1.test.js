@@ -85,10 +85,18 @@ describe('getBusNumbers', () => {
 		expect(getBusNumbers(43728)).toBe(1094);
 	});
 
-	//To Do: This test isnt returning true, probable fault with test not function code.
 	test('returns an error if the number of passengers is negitive', () => {
-		expect(getBusNumbers(-8).toThrow('You cant have negitive people'))
+		expect(() => {
+			getBusNumbers(-8);
+		}).toThrow("You cant have negitive people");
 	})
+	
+	test("should throw an error if called without a number", () => {
+		expect(() => {
+			getBusNumbers(undefined);
+		}).toThrow("people is required");
+	  })
+	  
 });
 
 describe('countSheep', () => {
