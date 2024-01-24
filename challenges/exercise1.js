@@ -7,21 +7,30 @@ export function getFillings(sandwich) {
 export function isFromManchester(person) {
 	if (person === undefined) throw new Error('person is required');
 
-    return person.city.toUpperCase() === "Manchester".toUpperCase()}
+    return person.city.toUpperCase() === "Manchester".toUpperCase()};
 
 export function getBusNumbers(people) {
 	if (people === undefined) throw new Error('people is required');
 	if (people < 0) throw new Error('You cant have negitive people');
-	const MAX_PEOPLE_PER_BUS = 40
-	return Math.ceil( people / MAX_PEOPLE_PER_BUS )
+	const MAX_PEOPLE_PER_BUS = 40;
+	return Math.ceil( people / MAX_PEOPLE_PER_BUS );
 }
 
 export function countSheep(arr) {
 	if (arr === undefined) throw new Error('arr is required');
-	// Your code here!
+
+	return countEachInstanceInArray(arr)["sheep"] || 0
 }
 
 export function hasMPostCode(person) {
 	if (person === undefined) throw new Error('person is required');
 	// Your code here!
+}
+
+function countEachInstanceInArray(arr) {
+	const counts = {};
+	for (const num of arr) {
+		counts[num] = (counts[num] || 0) + 1
+	  }
+	return counts
 }
