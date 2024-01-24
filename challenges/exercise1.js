@@ -1,6 +1,6 @@
 export function getFillings(sandwich) {
 	if (sandwich === undefined) throw new Error('ingredients is required');
-	
+
 	return sandwich.fillings;
 }
 
@@ -11,7 +11,9 @@ export function isFromManchester(person) {
 
 export function getBusNumbers(people) {
 	if (people === undefined) throw new Error('people is required');
-	// Your code here!
+	if (people < 0) throw new Error('You cant have negitive people');
+	const MAX_PEOPLE_PER_BUS = 40
+	return Math.ceil( people / MAX_PEOPLE_PER_BUS )
 }
 
 export function countSheep(arr) {
