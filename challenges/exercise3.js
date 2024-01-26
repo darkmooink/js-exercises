@@ -37,7 +37,11 @@ export function getCities(users) {
 
 export function getSquareRoots(nums) {
 	if (!nums) throw new Error('nums is required');
-	// Your code here
+	return nums.map(number => {
+		const squareRoot = Math.sqrt(number)
+		//the + in the following removes any trailing 0.
+		return +squareRoot.toFixed(2)
+	})
 }
 
 export function findSentencesContaining(sentences, str) {
