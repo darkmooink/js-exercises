@@ -17,13 +17,19 @@ export const count1sand0s = (str) => {
 
 export const reverseNumber = (n) => {
 	if (n === undefined) throw new Error('n is required');
-	
+
 	return +Array.from(n.toString()).reverse().join('')
 };
 
 export const sumArrays = (arrs) => {
 	if (arrs === undefined) throw new Error('arrs is required');
-	// Your code here!
+	let total = 0
+	arrs.forEach(arr => {
+		arr.forEach(num => {
+			total += num
+		})
+	})
+	return total
 };
 
 export const arrShift = (arr) => {
