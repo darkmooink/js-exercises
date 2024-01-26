@@ -55,5 +55,8 @@ export function findSentencesContaining(sentences, str) {
 
 export function getLongestSides(triangles) {
 	if (!triangles) throw new Error('triangles is required');
-	// Your code here
+	return triangles.map(triangle => {
+		//sort is a reverse sort.
+		return triangle.sort(function(a, b){return b-a})[0]
+	})
 }
