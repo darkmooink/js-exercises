@@ -19,7 +19,7 @@ export function camelCaseWords(words) {
 
 export function getTotalSubjects(people) {
 	if (people === undefined) throw new Error('people is required');
-	if (Array.isArray(people)) throw new Error('people is not array')
+	if (!Array.isArray(people)) throw new Error('people is not array')
 	let subjectCount = 0;
 	people.forEach(person => {
 		subjectCount += person.subjects.length
