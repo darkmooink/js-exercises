@@ -1,9 +1,8 @@
 export function findSmallNums(nums) {
 	if (!nums) throw new Error('nums is required');
-	let smallNums = [];
-	nums.forEach(number => {
-		if(number<1) smallNums.push(number)
-	});
+	let smallNums = nums.filter(number => {
+		return number<1
+	})
 	return smallNums
 }
 
