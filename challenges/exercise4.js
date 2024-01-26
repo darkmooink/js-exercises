@@ -8,7 +8,11 @@ export const findNextNumber = (nums, n) => {
 
 export const count1sand0s = (str) => {
 	if (str === undefined) throw new Error('str is required');
-	// Your code here!
+	let count = {0:0, 1:0,}
+	Array.from(str).forEach(number => {
+		count[number]++
+	})
+	return count
 };
 
 export const reverseNumber = (n) => {
