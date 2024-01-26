@@ -16,7 +16,9 @@ export function findNamesBeginningWith(names, char) {
 
 export function findVerbs(words) {
 	if (!words) throw new Error('words is required');
-	// Your code here
+	return words.filter(word => {
+		if (word.startsWith("to ")) return true
+	})
 }
 
 export function getIntegers(nums) {
