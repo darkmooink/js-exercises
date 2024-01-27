@@ -105,8 +105,7 @@ export const createMatrix = (n, fill) => {
 	for(let i = 0; i<n; i++){
 		y.push(x)
 	}
-	console.log(y)
-	return [['foo', 'foo', 'foo'], ['foo', 'foo', 'foo'], ['foo', 'foo', 'foo']];
+	//return [['foo', 'foo', 'foo'], ['foo', 'foo', 'foo'], ['foo', 'foo', 'foo']];
 	return y
 };
 
