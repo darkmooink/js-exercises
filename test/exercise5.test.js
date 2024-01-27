@@ -51,3 +51,27 @@ describe('getComplementaryDNA',() =>{
         expect(getComplementaryDNA('GTCATGCTAAGTCTGA')).toBe('CAGTACGATTCAGACT')
     })
 })
+describe('isItPrime',() =>{
+    test('Returns true when passed a prime', () => {
+        expect(isItPrime(2)).toBe(true);
+        expect(isItPrime(3)).toBe(true);
+        expect(isItPrime(5)).toBe(true);
+        expect(isItPrime(7)).toBe(true);
+        expect(isItPrime(1723)).toBe(true);
+        expect(isItPrime(7919)).toBe(true);
+        expect(isItPrime(900000006041)).toBe(true);
+        expect(isItPrime(8999999999999971)).toBe(true);
+    })
+    test('Returns false when passed a compsite number', () => {
+        expect(isItPrime(4)).toBe(false);
+        expect(isItPrime(6)).toBe(false);
+        expect(isItPrime(8)).toBe(false);
+        expect(isItPrime(9)).toBe(false);
+        expect(isItPrime(187)).toBe(false);
+        expect(isItPrime(7917)).toBe(false);
+        expect(isItPrime(900000006043)).toBe(false);
+    })
+    test('Returns false when passed a 1', () => {
+        expect(isItPrime(1)).toBe(false);
+    })
+})
