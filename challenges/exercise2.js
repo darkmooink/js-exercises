@@ -34,7 +34,6 @@ export function checkIngredients(menu, ingredient) {
 	
 	for (const dish of menu) {
 		for (const dishIngredient of dish.ingredients) {
-			console.log(dishIngredient + ' ' + ingredient + (dishIngredient === ingredient));
 			if (dishIngredient === ingredient) {
 				return true;
 			}
@@ -50,6 +49,5 @@ export function duplicateNumbers(arr1, arr2) {
 	arr1.forEach((num1)=> {
 		if (!duplicateNumbers.includes(num1) && arr2.includes(num1)) duplicateNumbers.push(num1)
 	})
-console.log(duplicateNumbers)
 	return duplicateNumbers.sort()
 }
