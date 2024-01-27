@@ -81,3 +81,25 @@ describe('createMatrix',() =>{
        
     })
 })
+describe('areWeCovered', () => {
+    const m = "Monday", tu = "Tuesday", w = "Wednesday", th = "ThUrSdAy", f = "Friday", sa = "Saturday", su = "Sunday"
+    const STAFF = [{ name: "Pedro", rota: [m,tu,w,th,f,sa,su]}, 
+    { name: "Regan", rota: [m,w,f]},
+    { name: "Willow", rota: [sa,su]},
+    { name: "Anna", rota: [m,tu,w,th,f]},
+    { name: "Guy", rota: [w,th]},
+    { name: "BOB", rota: [th, f]}]
+    test('Return false if less than 3 staff members exist', () => {
+        expect(areWeCovered([STAFF[0], STAFF[1]],f)).toBe(false)
+    })
+    test('Returns true if 3 or more staff are scheduled', () => {
+        expect(areWeCovered(STAFF, m)).toBe(true)
+    })
+    test('Returns false if less than 3 staff are scheduled', () => {
+        expect(areWeCovered(STAFF, sa)).toBe(false)
+    })
+    test('Returns correct value regardless of the case of input data', () => {
+        expect(areWeCovered(STAFF, 'MoNdAy')).toBe(true)
+        expect(areWeCovered(STAFF, 'Thursday')).toBe(true)
+    })
+})
