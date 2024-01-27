@@ -20,4 +20,8 @@ describe('sumMultiples', () => {
 	test('returns 0 if passed an empty string ', () => {
 		expect(sumMultiples([])).toBe(0);
 	});
+    test('returns correct result if numbers are multiple of both 3 and 5', () => {
+		expect(sumMultiples([15, 30, 45, 8, 23])).toBe(90);
+	});
+
 })
