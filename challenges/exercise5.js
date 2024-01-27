@@ -125,4 +125,10 @@ export const createMatrix = (n, fill) => {
 export const areWeCovered = (staff, day) => {
 	if (staff === undefined) throw new Error('staff is required');
 	if (day === undefined) throw new Error('day is required');
+	staff = staff.filter(staffMember => {
+		if (staffMember.rota.
+			map(word => {return word.toUpperCase()}).
+			includes(day.toUpperCase())) return true
+	})
+	return staff.length >= 3
 };
