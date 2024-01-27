@@ -25,3 +25,23 @@ describe('sumMultiples', () => {
 	});
 
 })
+
+describe('isValidDNA', () =>{
+    const dna = 'tatgactgcatgcgggagggtgattcgttagccgcatggagacgta'
+    const notdna = 'thisisnotadnasequence'
+
+    
+    test('Returns true with string of only TGAC', () => {
+        expect(isValidDNA(dna)).toBe(true)
+    })
+    test('Returns false with string containging a letter other than TGAC', () => {
+        expect(isValidDNA(notdna)).toBe(false)
+    })
+    test('Returns correct result regardless of case', () => {
+        
+        expect(isValidDNA(dna.toLowerCase())).toBe(true)
+        expect(isValidDNA(dna.toUpperCase())).toBe(true)
+        expect(isValidDNA(notdna.toLowerCase())).toBe(false)
+        expect(isValidDNA(notdna.toUpperCase())).toBe(false)
+    })
+})
