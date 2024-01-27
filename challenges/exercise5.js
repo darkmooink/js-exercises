@@ -36,6 +36,20 @@ export const isValidDNA = (str) => {
  */
 export const getComplementaryDNA = (str) => {
 	if (str === undefined) throw new Error('str is required');
+	if (!isValidDNA) throw new Error('string is not a valid DNA string');
+
+	return str.toUpperCase().split('').map(base => {
+		switch(base){
+			case 'T':
+				return 'A';
+			case 'A':
+				return 'T';
+			case 'C':
+				return 'G';
+			case 'G':
+				return 'C';
+		}
+	}).join('')
 };
 
 /**
