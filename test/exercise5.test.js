@@ -75,3 +75,9 @@ describe('isItPrime',() =>{
         expect(isItPrime(1)).toBe(false);
     })
 })
+describe('createMatrix',() =>{
+    test('Returns an x by x array of passed value', () =>{
+        expect(createMatrix(3, 'foo')).toStrictEqual([['foo', 'foo', 'foo'], ['foo', 'foo', 'foo'], ['foo', 'foo', 'foo']])
+       
+    })
+})
