@@ -45,3 +45,9 @@ describe('isValidDNA', () =>{
         expect(isValidDNA(notdna.toUpperCase())).toBe(false)
     })
 })
+
+describe('getComplementaryDNA',() =>{
+    test('Returns a string with a complement of the given DNA string, T always pairs with A, and C always pairs with G', () => {
+        expect(getComplementaryDNA('GTCATGCTAAGTCTGA')).toBe('CAGTACGATTCAGACT')
+    })
+})
