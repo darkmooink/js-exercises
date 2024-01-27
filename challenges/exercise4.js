@@ -37,7 +37,7 @@ export const arrShift = (arr) => {
 	if (arr.length < 2) return arr
 	let first = arr[0], last = arr[arr.length-1]
 	arr[0] = last
-	arr[arr.length] = first
+	arr[arr.length-1] = first
 	return arr
 };
 
