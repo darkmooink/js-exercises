@@ -59,6 +59,27 @@ export const getComplementaryDNA = (str) => {
  */
 export const isItPrime = (n) => {
 	if (n === undefined) throw new Error('n is required');
+
+	//javascript breaks somewhere between 9*10^15 and 9.01*10^15
+	if (n > 9000000000000000) new Error("numbers over 9,000,000,000,000,000 cant be checked")
+	if (n === 1) return false
+	const PRIMES = [ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+	if (PRIMES.includes(n)){
+		return true
+	}
+	for(const prime of PRIMES){
+		
+		if (n % prime === 0) {
+			return false
+		}
+	}
+	const rootn = Math.sqrt(n)
+	//todo: make this more efficiant
+	for(let i = PRIMES[PRIMES.length-1]; i < rootn; i += 2){
+		if(n % i === 0) return false
+	}
+
+	return true
 };
 
 /**
